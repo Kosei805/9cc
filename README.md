@@ -9,3 +9,16 @@
 ### 自動テストの作成
 
 - シンプルなテスト用のシェルスクリプト作成
+
+
+### 比較演算子の追加
+
+```
+expr       = equality
+equality   = relational ("==" relational | "!=" relational)*
+relational = add ("<" add | "<=" add | ">" add | ">=" add)*
+add        = mul ("+" mul | "-" mul)*
+mul        = unary ("*" unary | "/" unary)*
+unary      = ("+" | "-")? primary
+primary    = num | "(" expr ")"
+```
